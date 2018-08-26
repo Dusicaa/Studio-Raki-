@@ -1,0 +1,45 @@
+<section class="bg-dark text-white"  [style.backgroundImage]="'url('+ slika.imageUrl +')'">
+  <div class="container text-center">
+    <h2 class="mb-4">Najlepše što možemo doživeti je ono što je tajanstveno.
+       To je temeljni osećaj koji stoji u zametku svake umetnosti i nauke…</h2>
+ 
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p>Posalji poruku:</p>
+        <form class="container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+          <div class="form-group">
+            <input type="text" 
+            name="firstname"            
+             placeholder="Ime"
+              class="form-control" 
+              formControlName="firstname">
+            <small class="help-block" *ngIf="form.get('firstname').hasError('required') && form.get('firstname').touched">Ime je obavezno.</small>
+            <small class="help-block" *ngIf="form.get('firstname').hasError('minLength')">Ime mora imati vise od 3 karaktera.</small>
+            <small class="help-block" *ngIf="form.get('firstname').hasError('pattern')">Ime ne sme sadrzati specijalne znakove.</small>
+            <br>
+          </div>
+          <div class="form-group " >
+            <input type="text" name="lastname" placeholder="Prezime" class="form-control" formControlName="lastname">
+            <small class="help-block" *ngIf="form.get('lastname').hasError('required') && form.get('lastname').touched">Prezime je obavezno.</small>
+            <small class="help-block" *ngIf="form.get('lastname').hasError('minLength')">Prezime mora imati vise od 3 karaktera.</small>
+            <small class="help-block" *ngIf="form.get('lastname').hasError('pattern')">Prezime ne sme sadrzati specijalne znakove.</small>
+            <br>
+          </div>
+          <div class="form-group" >
+            <textarea name="message" class="form-control" formControlName="message"></textarea>
+            <br>
+            <small class="help-block" *ngIf="form.get('message').hasError('required') && form.get('message').touched">Poruka je obavezna.</small>
+            <small class="help-block" *ngIf=" form.get('message').hasError('minLength')">Poruka mora imati vise od 10 karaktera.</small>
+          </div>
+          <input type="submit" value="Posalji" [disabled]="!form.valid" />
+        </form>
+          <p *ngIf="form.valid">Poruka je validna, kliknite na POSALJI!<br>{{form.get('firstname').value}}  {{form.get('lastname').value}} : {{form.get('message').value}}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
