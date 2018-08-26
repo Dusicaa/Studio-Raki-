@@ -1,0 +1,122 @@
+[
+  {
+
+    "id": "1",
+    "imageUrl": "./assets/img/gallery/1.jpg",
+    "name": "slika 1",
+    "alt": "slika1"
+  },
+  {
+
+"id": "2",
+"imageUrl": "./assets/img/gallery/2.jpg",
+"name": "slika 2",
+"alt": "slika2"
+},
+{
+
+"id": "3",
+"imageUrl": "./assets/img/gallery/3.jpg",
+"name": "slika3",
+"alt": "slika3"
+},
+{
+
+"id": "4",
+"imageUrl": "assets/img/gallery/4.jpg",
+"name": "izlozba 4",
+"alt": "ozlozba 4"
+},
+{
+
+"id": "5",
+"imageUrl": "assets/img/gallery/ikona1.jpg",
+"name": "Bogorodica",
+"alt": "Bogorodica"
+},
+{
+
+"id": "6",
+"imageUrl": "assets/img/gallery/ikona2.jpg",
+"name": "Vavedenje presvete Bogorodice",
+"alt": "Vavedenje presvete Bogorodice"
+},
+{
+
+"id": "7",
+"imageUrl": "assets/img/gallery/ikona3.jpg",
+"name": "Sv. Nikola",
+"alt": "Sv. Nikola"
+},
+{
+
+"id": "8",
+"imageUrl": "assets/img/gallery/marama1.jpg",
+"name": "Marama-dizajn 1",
+"alt": "Marama-dizajn 1"
+},
+{
+
+"id": "9",
+"imageUrl": "assets/img/gallery/marama2.jpg",
+"name": "Marama-dizajn 2",
+"alt": "Marama-dizajn 2"
+},
+{
+
+"id": "10",
+"imageUrl": "assets/img/gallery/marama3.jpg",
+"name": "Marama-dizajn 3",
+"alt": "Marama-dizajn 3"
+
+},
+{
+
+"id": "11",
+"imageUrl": "assets/img/gallery/prsluk1.jpg",
+"name": "Prsluk-tkanje 1",
+"alt": "Prsluk-tkanje 1"
+
+},
+{
+
+"id": "12",
+"imageUrl": "assets/img/gallery/prsluk2.jpg",
+"name": "Prsluk-tkanje 2",
+"alt": "Prsluk-tkanje 2"
+
+},
+{
+
+"id": "13",
+"imageUrl": "assets/img/gallery/prsluk3.jpg",
+"name": "Prsluk-tkanje 3",
+"alt": "Prsluk-tkanje 3"
+
+},
+{
+
+"id": "14",
+"imageUrl": "assets/img/gallery/slika1.jpg",
+"name": "Grad 1",
+"alt": "Grad1"
+
+},
+{
+
+"id": "15",
+"imageUrl": "assets/img/gallery/slika2.jpg",
+"name": "Grad 2",
+"alt": "Grad 2"
+
+},
+{
+
+"id": "16",
+"imageUrl": "assets/img/gallery/slika3.jpg",
+"name": "Grad 3",
+"alt": "Grad 3"
+
+}
+
+]

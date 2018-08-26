@@ -1,0 +1,18 @@
+[
+    {
+        "id" : 1,
+        "name" : "slike"
+    },
+    {
+        "id": 2,
+        "name" : "ikone"
+    },
+    {
+        "id": 3,
+        "name" : "nakit"
+    },
+    {
+        "id": 3,
+        "name" : "dizajn"
+    }
+]
