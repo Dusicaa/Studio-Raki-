@@ -1,9 +1,11 @@
+import { ProductService } from './products/product.service';
 
 
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PostoviComponent } from './postovi/postovi.component';
 import { ContactComponent } from './contact/contact.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule,ReactiveFormsModule}  from '@angular/forms';
@@ -18,6 +20,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { Pipe, PipeTransform } from '@angular/core'; 
 
 import { FilterPipe } from './filter.pipe';
+import { ProductComponent } from './products/product.component';
 /* import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -43,6 +46,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
     GalleryComponent,
     SliderComponent,
     SignupFormComponent,
+    ProductComponent,
 /*AdminComponent,*/
    FilterPipe
   
@@ -61,6 +65,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
        { path: 'postovi', component: PostoviComponent },
        { path: 'gallery', component: GalleryComponent },
        { path: 'loginForm', component: SignupFormComponent },
+       { path: 'product', component:ProductComponent },
        /*{ path: 'adminPanel', component: AdminComponent },*/
 
      ]),
@@ -69,7 +74,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
      AngularFireAuthModule,
      AngularFireDatabaseModule */
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [
     AppComponent,
     AboutComponent,
@@ -77,6 +84,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
     PostoviComponent,
     GalleryComponent,
   SliderComponent,
-  SignupFormComponent]
+  SignupFormComponent,
+ProductComponent]
 })
 export class AppModule { }
