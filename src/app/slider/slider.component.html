@@ -2,12 +2,12 @@
   <div class="container my-auto">
     <div class="row">
         <div class="col-lg-10 mx-auto">
-            <p [@myAnimations]='state' (click)="animateMe()">
-                Die Kunst ist eine Tochter der Freiheit. Umetnost je ćerka slobode. <br>  Fridrih  Šiler</p>
+            <p [@myAnimations]='state' (click)="animateMe()" >
+               <strong id="citat">¨Die Kunst ist eine Tochter der Freiheit. Umetnost je ćerka slobode.¨ </strong> <br>  Fridrih  Šiler<br>
+                <br>
+                {{day|date}}</p>
           </div>
-              <div class="col-lg-10 mx-auto">
-              <h6>{{day|date}}</h6>
-              </div>
+              
 
     </div>
    

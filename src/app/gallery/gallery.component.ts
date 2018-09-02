@@ -8,10 +8,15 @@ import { SlikeService } from '../services/slike.service';
 })
 export class GalleryComponent implements OnInit {
  slike:any;
+ pozadina;
   constructor(private service: SlikeService) { }
 
   ngOnInit() {
    
+  
+      this.pozadina=({
+        imageUrl:"./../../assets/img/selo.jpg"
+      })
     
 
     // success: function(podaci)

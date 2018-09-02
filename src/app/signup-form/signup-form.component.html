@@ -1,7 +1,7 @@
 <section class="bg-dark text-white"  [style.backgroundImage]="'url('+ slika.imageUrl +')'">
   <div class="container text-center" 
   >
-    <h2 class="mb-4">Mutum est pictura poema – Slika je nema pesma</h2>
+    <h2 class="mb-4" id="citat" [ngStyle]="{'color':'#ff8000'}">Mutum est pictura poema – Slika je nema pesma</h2>
    
   </div>
 </section>
@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <form [formGroup]="form" (ngSubmit)="submit()">
+        <form [formGroup]="form" #f="ngForm"  (ngSubmit)="login(f.value)" >   <!---->
          <div *ngIf="form.errors" class="alert alert-danger">
             Username or password is invalid.
           </div>
@@ -46,7 +46,7 @@
                         class="form-control"/>
               </div>
             </div>
-            <button class="btn btn-primary" type="submit"   >Loguj se</button> 
+            <button class="btn btn-primary" type="submit"  >Loguj se</button> 
         </form>
       </div>
     </div>

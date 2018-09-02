@@ -1,12 +1,14 @@
+
 <section class="btn-light" id="about"  [style.backgroundImage]="'url('+ slika.imageUrl +')'">
 <div class="container" [@myAnimations]='state' (mousedown)="animateMe()">
   <div class="row">
     <div class="col-lg-8 mx-auto text-center">
-      <h2  class="section-heading text-white">{{name|uppercase}}</h2>
-      <hr class="light my-4">
-      <h2 > Zovem se {{name}}, rodjen u Nišu 1995. godine. </h2>
-      <h3 >Završavam Visoku strukovnu školu za  tekstil, istovremeno pohadjajuci kurs zlatovez.</h3>
-      <p class="text-faded mb-4" >
+    
+      
+      <p  [ngStyle]="{'color':'#ff8c1a'}" > Zovem se {{name |uppercase}}, rodjen u Nišu 1995. godine. </p>
+      <p [ngStyle]="{'color':'#ff8000'}">Završavam Visoku strukovnu školu za  tekstil, istovremeno pohadjajuci kurs zlatovez.</p>
+      <hr class="light my-4" >
+      <p class="text-faded mb-4"  [ngStyle]="{'color':'#cc6600'}">
         Po zanimanju sam i ikonopisac, šnajder. Od tehnika pri izradi slika koristim uljanu tehniku,
         akvarel, ikonopisanje,na staklu,tuševima. Dizajniram marame, košulje, kravate i haljine zlatovezom.
       </p>

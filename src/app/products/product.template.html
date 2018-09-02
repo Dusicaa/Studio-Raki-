@@ -1,93 +1,90 @@
-<section class="bg-dark text-white"  [style.backgroundImage]="'url('+ slika.imageUrl +')'">
+<section class="bg-dark text-white" [style.backgroundImage]="'url('+ slika.imageUrl +')'">
   <div class="container text-center">
-    <h2 class="mb-4">Umetnicko delo je jedinstveni rezultat jedinstvenog temperamenta...</h2>
- 
+    <h2 class="mb-4" id="citat" [ngStyle]="{'color':'#ff8000'}">Umetnicko delo je jedinstveni rezultat jedinstvenog temperamenta...</h2>
+
   </div>
 </section>
+
 <div class="container">
   <div class="col-md-12">
     <h1>Lista proizvoda</h1>
-      <table class="table table-bordered table-striped table-hover">
-    <thead>
-      <tr>
-        <th class="text-center">ID</th>
-        <th class="text-center">Ime</th>
-        <th class="text-center">Opis</th>
-        <th class="text-center">Cena</th>
-        <th class="text-center">&nbsp;</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{ product.id }}</td>
-        <td>{{ product.name }}</td>
-        <td>{{ product.description }}</td>
-        <td>{{ product.price | currency:'USD':true:'1.0-2' }}</td>
-        <td>
-          <button class="btn btn-info"
-                        (click)="showEditProductForm(product)">
-                       <i class="fa fa-edit"></i>
-              </button>
-          <button class="btn btn-danger"
-                       (click)="removeProduct(product)">
-                       <i class="fa fa-minus"></i>
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+
+        <tr>
+          <th class="text-center">ID</th>
+          <th class="text-center">Ime</th>
+          <th class="text-center">Opis</th>
+          <th class="text-center">Cena</th>
+          <th class="text-center">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price | currency:'USD':true:'1.0-2' }}</td>
+
+          <td>
+            <button class="btn btn-info" *ngIf="show" (click)="showEditProductForm(product)">
+              <i class="fa fa-edit"></i>
             </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <button class="btn btn-danger" *ngIf="show" (click)="removeProduct(product)">
+              <i class="fa fa-minus"></i>
+            </button>
+          </td>
 
-  <button class="btn btn-success"
-               (click)="showAddProductForm()"><i class="fa fa-plus"></i></button>
-  <br />
-  <br />
+        </tr>
+      </tbody>
+    </table>
 
-  <form *ngIf="productForm">
-    <h2>Dodaj novi proizvod:</h2>
-    <p>ID: <input type="text"
-                           name="id"
-                           [(ngModel)]="newProduct.id" /></p>
-    <p>Ime: <input type="text"
-                                 name="name"
-                                 [(ngModel)]="newProduct.name" /></p>
-    <p>Opis: <input type="text"
-                                          name="description"
-                                          [(ngModel)]="newProduct.description" /></p>
-    <p>Cena: <input type="text"
-                                name="price"
-                                [(ngModel)]="newProduct.price" /></p>
-    <p>
-      <button type="button"
-                   class="btn btn-primary"
-                   (click)="saveProduct(newProduct)">Submit</button>
-      <button type="button"
-                   class="btn btn-warning"
-                   (click)="cancelNewProduct()">Cancel</button>
-    </p>
-   </form>
+    <button class="btn btn-success" (click)="showAddProductForm()">
+      <i class="fa fa-plus"></i>
+    </button>
+    <br />
+    <br />
+
+    <form *ngIf="productForm">
+      <h2>Dodaj novi proizvod:</h2>
+      <p>ID:
+        <input type="text" name="id" [(ngModel)]="newProduct.id" />
+      </p>
+      <p>Ime:
+        <input type="text" name="name" [(ngModel)]="newProduct.name" />
+      </p>
+      <p>Opis:
+        <input type="text" name="description" [(ngModel)]="newProduct.description" />
+      </p>
+      <p>Cena:
+        <input type="text" name="price" [(ngModel)]="newProduct.price" />
+      </p>
+      <p>
+        <button type="button" class="btn btn-primary" (click)="saveProduct(newProduct)">Submit</button>
+        <button type="button" class="btn btn-warning" (click)="cancelNewProduct()">Cancel</button>
+      </p>
+    </form>
 
     <form *ngIf="editProductForm">
-    <h2>Izmeni proizvod:</h2>
-    <p>ID: <input type="text"
-                           name="id"
-                           [(ngModel)]="editedProduct.id" /></p>
-    <p>Ime: <input type="text"
-                                 name="name"
-                                 [(ngModel)]="editedProduct.name" /></p>
-    <p>Opis: <input type="text"
-                                          name="description"
-                                          [(ngModel)]="editedProduct.description" /></p>
-    <p>Cena: <input type="text"
-                                name="price"
-                                [(ngModel)]="editedProduct.price" /></p>
-    <p>
-      <button type="button"
-                   class="btn btn-primary"
-                   (click)="updateProduct(editedProduct)">Submit</button>
-      <button type="button"
-                   class="btn btn-warning"
-                   (click)="cancelEdits()">Cancel</button>
-    </p>
-   </form>
+      <h2>Izmeni proizvod:</h2>
+      <p>ID:
+        <input type="text" name="id" [(ngModel)]="editedProduct.id" />
+      </p>
+      <p>Ime:
+        <input type="text" name="name" [(ngModel)]="editedProduct.name" />
+      </p>
+      <p>Opis:
+        <input type="text" name="description" [(ngModel)]="editedProduct.description" />
+      </p>
+      <p>Cena:
+        <input type="text" name="price" [(ngModel)]="editedProduct.price" />
+      </p>
+      <p>
+        <button type="button" class="btn btn-primary" (click)="updateProduct(editedProduct)">Submit</button>
+        <button type="button" class="btn btn-warning" (click)="cancelEdits()">Cancel</button>
+      </p>
+    </form>
   </div>
 </div>
+<input type="submit" value="Loguj se" (click)="ulogujse()"/>

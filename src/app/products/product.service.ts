@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { Product } from './product';
 import { PRODUCT_ITEMS } from './product-data';
 import { findIndex } from 'lodash';
+import { AuthService } from '../services/auth/auth.service';
 
 @Injectable()
 export class ProductService {
+  constructor(private auth: AuthService) { }
+
   private pItems = PRODUCT_ITEMS;
 
   getProductsFromData(): Product[] {
@@ -29,6 +32,7 @@ export class ProductService {
     console.log(this.pItems);
   }
 
+ 
 }
 
   // getProductsFromService(): Product[] {

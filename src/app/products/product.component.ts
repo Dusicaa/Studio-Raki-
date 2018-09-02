@@ -2,29 +2,43 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from './product.service';
 import { Product } from './product';
 import { clone } from 'lodash';
+import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { UsernameValidators } from '../signup-form/username.validators';
 
 @Component({
-    //moduleId: module.id,
-    selector: 'app-product',
-    templateUrl: 'product.template.html',
-    styleUrls: ['../app.component.css']
+  //moduleId: module.id,
+  selector: 'app-product',
+  templateUrl: 'product.template.html',
+  styleUrls: ['product.component.css']
 })
 
 export class ProductComponent implements OnInit {
+
   products: Product[];
   productForm: boolean = false;
   editProductForm: boolean = false;
   isNewForm: boolean;
   newProduct: any = {};
   editedProduct: any = {};
-slika;
-  constructor(private _productService: ProductService) { }
+  slika;
+  public show: boolean = false;
+  public buttonName: any = 'Show';
+  model: any = {};
+  loading = false;
+  returnUrl: string;
+  invalidLogin: boolean;
+  isLoggedIn = false;
+  constructor(private _productService: ProductService, private router: Router) { }
 
   ngOnInit() {
-    this.slika=({
-      imageUrl:"./../../assets/img/about2.jpg"
+    this.slika = ({
+      imageUrl: "./../../assets/img/about2.jpg"
     })
     this.getProducts();
+
+
   }
 
   getProducts() {
@@ -32,7 +46,7 @@ slika;
   }
 
   showEditProductForm(product: Product) {
-    if(!product) {
+    if (!product) {
       this.productForm = false;
       return;
     }
@@ -42,7 +56,7 @@ slika;
 
   showAddProductForm() {
     // resets form if edited product
-    if(this.products.length) {
+    if (this.products.length) {
       this.newProduct = {};
     }
     this.productForm = true;
@@ -50,7 +64,7 @@ slika;
   }
 
   saveProduct(product: Product) {
-    if(this.isNewForm) {
+    if (this.isNewForm) {
       // add a new product
       this._productService.addProduct(product);
     }
@@ -76,5 +90,15 @@ slika;
     this.editedProduct = {};
     this.editProductForm = false;
   }
+  ulogujse() {
+
+    this.show = !this.show;
+    // CHANGE THE NAME OF THE BUTTON.
+    if(this.show)  
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+  }
+
 
 }

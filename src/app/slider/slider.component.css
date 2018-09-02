@@ -5,4 +5,13 @@ p{
     text-align:center;
     padding:20px;
     font-size:1.5em;
+    color:#ff8c1a;
+  }
+  h5{
+
+    color: rgb(125, 143, 143);
+  }
+  #citat{
+    font-family: 'Tangerine', serif;
+    font-size: 40px;
   }

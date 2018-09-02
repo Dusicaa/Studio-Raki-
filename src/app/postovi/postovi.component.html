@@ -1,69 +1,76 @@
-<section class="bg-dark text-white"  [style.backgroundImage]="'url('+ slika.imageUrl +')'">
-    <div class="container text-center">
-      <h2 class="mb-4">Najlepše što možemo doživeti je ono što je tajanstveno.
-         To je temeljni osećaj koji stoji u zametku svake umetnosti i nauke…</h2>
-   
-    </div>
-  </section>
+<section class="bg-dark text-white" [style.backgroundImage]="'url('+ slika.imageUrl +')'">
+  <div class="container text-center">
+    <h2 class="mb-4" id="citat" [ngStyle]="{'color':'#ff8000'}">Najlepše što možemo doživeti je ono što je tajanstveno. To je temeljni osećaj koji stoji u zametku svake umetnosti i
+      nauke…</h2>
 
-<section class="p-0" id="portfolio"  >
-<div class="container-fluid p-0"   [style.backgroundColor]="'#6a7676'">
-  <div class="row">
-    <div class="col-lg-2 mx-auto text-center form-group">
-      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
-<label for="unesiPost">Naziv posta:</label><br>
-<input type="text"
- id="unesiPost"
-   class="form-control"  
-   formControlName="nazivPosta"
-  /><br>
-  <small class="help-block" *ngIf="form.get('nazivPosta').hasError('required') && form.get('nazivPosta').touched">Naziv posta je obavezan.</small>
-  <small class="help-block" *ngIf="form.get('nazivPosta').hasError('minLength') && form.get('tekstPosta').touched">Naziv posta mora imati vise od 3 karaktera.</small>
-  <small class="help-block" *ngIf="form.get('nazivPosta').hasError('pattern') && form.get('tekstPosta').touched">Naziv posta ne sme sadrzati specijalne znakove.</small>
-<br><label for="unesiTekst">Tekst posta:</label>
-<textarea type="text"
- id="unesiTekst" 
- class="form-control" 
-  formControlName="tekstPosta"
-   ></textarea>
-<br>
-<small class="help-block" *ngIf="form.get('tekstPosta').hasError('required') && form.get('tekstPosta').touched">Tekst posta je obavezan.</small>
-  <small class="help-block" *ngIf="form.get('tekstPosta').hasError('minLength')">Tekst posta mora imati vise od 3 karaktera.</small>
-
-<br><label for="vrsta" >Vrsta:</label>
-<select class="form-control" id="vrsta" required  name="vrsta">
-  <option [value]="vrsta.id" *ngFor="let vrsta of vrste">{{vrsta.name}}</option>
-</select><br>
-
-<input type="submit" class="btn btn-primary" value="Sacuvaj Post" [disabled]="!form.valid" />
-
-</form>
-      </div>
-
-  
-    </div>
-</div>
-
-</section>
-
-<section class="details-card" id="postovi">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-4" id="post" *ngFor="let post of postovi">
-              <div class="card-content">
-                  <div class="card-img">
-                      <img src="https://placeimg.com/380/230/nature" alt="">
-                      <span><h4>{{post.vrsta_id}}</h4></span>
-                  </div>
-                  <div class="card-desc">
-                      <h3>{{post.nazivPosta}}</h3>
-                      <p>{{post.tekstPosta}}</p>
-                            
-                  </div>
-              </div>
-          </div>
-        
-      </div>
   </div>
 </section>
 
+
+
+<section class="details-card" id="postovi">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" id="post" *ngFor="let post of postovi" [style.margin]="'30px 20px 30px auto'">
+        <div class="card-content">
+          <div class="card-img" [style.margin-bottom]="'15px'">
+            <img src="https://placeimg.com/380/230/nature" alt="">
+
+          </div>
+          <div class="card-desc">
+            <h3>{{post.nazivPosta}}</h3>
+            <p>{{post.tekstPosta}}</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="p-0" id="portfolio" >
+  <div class="container-fluid p-0" [style.backgroundColor]="'#c2d6d6'">
+    <div class="row" >
+      <p [style.margin]="'auto'" ><input type="submit" (click)="toogle()"  class="btn btn-primary" [style.margin]="'10px'" value="Admin-Unos postova"  /></p>
+  
+    </div>
+    <ng-container *ngIf="show">
+    <div class="row" id="UnosPosta" >
+      <div class="col-lg-8 mx-auto text-center">
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="container">
+          <label for="unesiPost" >Naziv posta:</label>
+          <input type="text" id="unesiPost" class="form-control" formControlName="nazivPosta" [style.margin]="'0 0 10px 0'" />
+       
+        <br>
+          <label for="unesiTekst">Tekst posta:</label>
+          <textarea type="text" id="unesiTekst" class="form-control " formControlName="tekstPosta" [style.margin]="'0 0 10px 0'"></textarea>
+        
+        
+          <label for="vrsta">Vrsta:</label>
+          <select class="form-control" id="vrsta" required name="vrsta" [style.margin]="'0 0 10px 0 '">
+            <option [value]="vrsta.id" *ngFor="let vrsta of vrste">{{vrsta.name}}</option>
+          </select>
+          
+          <input type="submit" class="btn btn-primary" [style.margin]="'15px'" value="Sacuvaj Post" [disabled]="!form.valid" />
+  
+          <small class="help-block" *ngIf="form.get('nazivPosta').hasError('required') && form.get('nazivPosta').touched">Naziv posta je obavezan.</small>
+          <small class="help-block" *ngIf="form.get('nazivPosta').hasError('minLength') && form.get('tekstPosta').touched">Naziv posta mora imati vise od 3 karaktera.</small>
+          <small class="help-block" *ngIf="form.get('nazivPosta').hasError('pattern') && form.get('tekstPosta').touched">Naziv posta ne sme sadrzati specijalne znakove.</small>
+        
+          <small class="help-block" *ngIf="form.get('tekstPosta').hasError('required') && form.get('tekstPosta').touched">Tekst posta je obavezan.</small>
+          <small class="help-block" *ngIf="form.get('tekstPosta').hasError('minLength')">Tekst posta mora imati vise od 3 karaktera.</small>
+           <br>
+        
+        
+        </form>
+      
+      </div>
+   
+
+    </div>
+
+  </ng-container>
+  </div> 
+
+</section>

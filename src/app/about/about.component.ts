@@ -5,8 +5,8 @@ import {
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['../app.component.css'],
+  templateUrl: 'about.component.html',
+  styleUrls: ['about.component.css'],
   animations:[
     trigger('myAnimations',[
 
@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.slika=({
-      imageUrl:"./../../assets/img/about1.jpg"
+      imageUrl:"./../../assets/img/selo.jpg"
     })
   }
   name="Aleksandar Rakić";

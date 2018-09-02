@@ -3,14 +3,14 @@
 
   <div class="container">
  
-    <a class="navbar-brand js-scroll-trigger" href="">Studio Rakić  </a>
+    <a class="navbar-brand js-scroll-trigger" href=""id="logo" [ngStyle]="{'color':'#ff8000'}">Studio Rakić  </a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon">  </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" >
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" routerLink="/about">O meni</a>
+          <a class="nav-link js-scroll-trigger" routerLink="/about" >O meni</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger"  routerLink="/gallery" >Galerija</a>
@@ -24,9 +24,10 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" routerLink="/contact" >Kontakt</a>
         </li>
-       <!-- <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" routerLink="/loginForm" >Admin-panel</a>
-        </li>-->
+      
+       <!-- <li class="nav-item"  *ngIf="!isLoggedIn" >
+          <a class="nav-link js-scroll-trigger" routerLink="/logout" (click)="logout()" [ngStyle]="{'font-size':'10px','color':'red'}">Izloguj se</a>
+       </li>-->
       </ul>
      
     </div>

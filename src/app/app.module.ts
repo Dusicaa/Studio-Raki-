@@ -1,26 +1,30 @@
+import { SlikeService } from './services/slike.service';
+import { PostoviService } from './services/postovi.service';
+import { AuthService } from './services/auth/auth.service';
 import { ProductService } from './products/product.service';
 
-
+import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PostoviComponent } from './postovi/postovi.component';
 import { ContactComponent } from './contact/contact.component';
+import { SliderComponent } from './slider/slider.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ProductComponent } from './products/product.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule,ReactiveFormsModule}  from '@angular/forms';
-import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { EchoService } from './services/echo.service';
 import { HttpClientModule } from '@angular/common/http';
-import { SliderComponent } from './slider/slider.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-/*import { AdminComponent } from './admin/admin.component';*/
-import { Pipe, PipeTransform } from '@angular/core'; 
 
+import { Pipe, PipeTransform } from '@angular/core'; 
 import { FilterPipe } from './filter.pipe';
-import { ProductComponent } from './products/product.component';
+import { BaseRequestOptions } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
+import { fakeBackendProvider } from './helpers/fake-backend';
+
 /* import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule, AngularFirestore} from 'angularfire2/firestore';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -47,7 +51,6 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
     SliderComponent,
     SignupFormComponent,
     ProductComponent,
-/*AdminComponent,*/
    FilterPipe
   
     
@@ -64,10 +67,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
        { path: 'contact', component: ContactComponent },
        { path: 'postovi', component: PostoviComponent },
        { path: 'gallery', component: GalleryComponent },
-       { path: 'loginForm', component: SignupFormComponent },
+       { path: 'login', component: SignupFormComponent },
        { path: 'product', component:ProductComponent },
-       /*{ path: 'adminPanel', component: AdminComponent },*/
-
+       { path: 'logout', component:AppComponent },
      ]),
      /* AngularFireModule.initializeApp(firebaseConfig),
      AngularFirestoreModule,
@@ -75,7 +77,13 @@ import {AngularFireAuthModule} from 'angularfire2/auth'; */
      AngularFireDatabaseModule */
   ],
   providers: [
-    ProductService
+    ProductService,
+    AuthService,
+    PostoviService,
+    SlikeService,
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ],
   bootstrap: [
     AppComponent,

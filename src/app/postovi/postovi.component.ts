@@ -1,21 +1,26 @@
 
 import { Component, OnInit } from '@angular/core';
 import { SlikeService } from '../services/slike.service';
-import { FormGroup, FormControl,Validators } from '../../../node_modules/@angular/forms';
+import { FormGroup, FormControl,Validators, FormBuilder } from '../../../node_modules/@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 
 
 @Component({
   selector: 'app-postovi',
   templateUrl: './postovi.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['postovi.component.css']
 })
 export class PostoviComponent implements OnInit {
-  slike:any;
+ slike:any;
   vrste:any;
   slika;
   postovi;
   form;
-  constructor(private service: SlikeService) { }
+ 
+  public show:boolean = false;
+  public buttonName:any = 'Show';
+  constructor(private service: SlikeService,private router: Router,private auth: AuthService) { }
 
   ngOnInit() {
    this.slika=({
@@ -62,6 +67,18 @@ export class PostoviComponent implements OnInit {
 
     console.log(user);
   
+  } 
+  toogle(){
+    this.show = !this.show;
+
+    // CHANGE THE NAME OF THE BUTTON.
+    if(this.show)  
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+   
   }
+
+  
 
 }
