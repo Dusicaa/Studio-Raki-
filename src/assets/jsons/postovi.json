@@ -4,9 +4,33 @@
 
         "nazivPosta": "Izlozba slika Beograd",
         "tekstPosta":
-         " Humanitarna izložba Srkdldkffkdkdkdkdkkdkdkdkdkdkdkkdkddkdkdkdkkdkdk",
+         " Na ovogodišnjoj izložbi sa svojim radovima i rukotvorinama učestvuje preko 100 izlagača, među kojima je deset mladih akademskih slikara, oko 30 izlagača iz Škole za dizajn, učenici Škole „Anton Skala“, deca iz Doma „Drinka Pavlović“ i volonteri Međugeneracijskog centra, koji su donirali svoje radove kako bi pomogli najugroženijima.",
         "vrsta_id":1
 
-    }
+    },
+    {
+
+"nazivPosta": "Izlozba slika Niš",
+"tekstPosta":
+ "Nagrade će mladim umetnicima biti dalji impuls u radu i značajna materijalna pomoć koja će im omogućiti da se još više posvete svojoj umetnosti. Žiri ima utisak da je sa svakom godinom nivo likovnih dela sve viši, što govori da ova nagrada ozbiljno stimuleše mlade slikare - dodaju organizatori.",
+"vrsta_id":2
+
+},
+{
+
+"nazivPosta": "Izlozba slika Novi Sad",
+"tekstPosta":
+ "Nagrade će mladim umetnicima biti dalji impuls u radu i značajna materijalna pomoć koja će im omogućiti da se još više posvete svojoj umetnosti. Žiri ima utisak da je sa svakom godinom nivo likovnih dela sve viši, što govori da ova nagrada ozbiljno stimuleše mlade slikare - dodaju organizatori.",
+"vrsta_id":3
+
+},
+{
+
+"nazivPosta": "Izlozba slika Niš",
+"tekstPosta":
+ "Nagrade će mladim umetnicima biti dalji impuls u radu i značajna materijalna pomoć koja će im omogućiti da se još više posvete svojoj umetnosti. Žiri ima utisak da je sa svakom godinom nivo likovnih dela sve viši, što govori da ova nagrada ozbiljno stimuleše mlade slikare - dodaju organizatori.",
+"vrsta_id":4
+
+}
    
 ]

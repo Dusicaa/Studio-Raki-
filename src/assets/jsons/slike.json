@@ -3,29 +3,31 @@
 
     "id": "1",
     "imageUrl": "./assets/img/gallery/1.jpg",
-    "name": "slika 1",
-    "alt": "slika1"
+    "name": "Izlozba 1",
+    "alt": "Izlozba 1"
   },
   {
 
 "id": "2",
 "imageUrl": "./assets/img/gallery/2.jpg",
-"name": "slika 2",
-"alt": "slika2"
+"name": "Izlozba 2",
+"alt": "Izlozba 2"
 },
 {
 
 "id": "3",
 "imageUrl": "./assets/img/gallery/3.jpg",
-"name": "slika3",
-"alt": "slika3"
+"name": "Izlozba 3",
+"alt": "izlozba 3"
 },
 {
 
 "id": "4",
-"imageUrl": "assets/img/gallery/4.jpg",
-"name": "izlozba 4",
-"alt": "ozlozba 4"
+
+
+"imageUrl": "assets/img/gallery/ikona3.jpg",
+"name": "Sv. Nikola",
+"alt": "Sv. Nikola"
 },
 {
 
@@ -41,27 +43,7 @@
 "name": "Vavedenje presvete Bogorodice",
 "alt": "Vavedenje presvete Bogorodice"
 },
-{
 
-"id": "7",
-"imageUrl": "assets/img/gallery/ikona3.jpg",
-"name": "Sv. Nikola",
-"alt": "Sv. Nikola"
-},
-{
-
-"id": "8",
-"imageUrl": "assets/img/gallery/marama1.jpg",
-"name": "Marama-dizajn 1",
-"alt": "Marama-dizajn 1"
-},
-{
-
-"id": "9",
-"imageUrl": "assets/img/gallery/marama2.jpg",
-"name": "Marama-dizajn 2",
-"alt": "Marama-dizajn 2"
-},
 {
 
 "id": "10",
@@ -86,14 +68,7 @@
 "alt": "Prsluk-tkanje 2"
 
 },
-{
 
-"id": "13",
-"imageUrl": "assets/img/gallery/prsluk3.jpg",
-"name": "Prsluk-tkanje 3",
-"alt": "Prsluk-tkanje 3"
-
-},
 {
 
 "id": "14",
@@ -117,6 +92,28 @@
 "name": "Grad 3",
 "alt": "Grad 3"
 
+},
+{
+
+"id": "7",
+"imageUrl": "assets/img/gallery/merlin.jpg",
+"name": "Merlin Monro ",
+"alt": "Merlin Monro"
+
+},
+{
+
+"id": "8",
+"imageUrl": "assets/img/gallery/lancic.jpg",
+"name": "Rucni rad lancic1",
+"alt": "Rucni rad"
+},
+{
+
+"id": "9",
+"imageUrl": "assets/img/gallery/lanac.jpg",
+"name": "Rucni rad lanic2",
+"alt": "Rucni rad lanic 2"
 }
 
 ]
